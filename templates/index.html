@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classification</title>
+  <style>
+    body {
+      background-color: #162447; /* Dark blue background color */
+      color: white; /* Text color */
+      font-family: Arial, sans-serif; /* Added font family for better readability */
+      margin: 0; /* Remove default margin */
+    }
+    .wrap {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box; /* Include padding in width */
+    }
+ 
+    #primary-nav {
+      text-align: right; /* Align navigation to the right */
+    }
+    #primary-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #primary-nav ul li {
+      display: inline-block; /* Display list items inline */
+      margin-left: 20px; /* Add some space between list items */
+    }
+    #maintext {
+      position: absolute;
+      margin: auto;
+      width: 700px;
+      height: 200px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the main text */
+    }
+    .upload-form {
+      margin-top: 20px; /* Add some space above the form */
+    }
+    .upload-form input[type="file"] {
+      padding: 10px;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+    }
+    .upload-form input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* You can change the color as needed */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.button1:hover {
+    background-color: #0056b3; /* Change color on hover if desired */
+}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header id="header">
+      <div class="container-fluid">
+        <nav id="primary-nav" class="dropdown cf">
+          <ul class="dropdown menu">
+            
+            <li><a type="button" href="/login" class="button1">Sign Out</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <div id="maintext">
+    <h1 class="text-dark mb-2">Upload your image to be classified!</h1>
+    <h4 class="text-dark mb-5">(Please upload images less than 500kb in size)</h4>
+    <form enctype="multipart/form-data" action="/predict2" method="post" class="upload-form">
+      <p class="text-dark">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload" />
+      </p>
+    </form>
+  </div>
+</body>
+</html>
